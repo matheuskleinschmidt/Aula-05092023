@@ -1,18 +1,7 @@
 import random
-
-MIN = -999_999
-MAX = 999_999
-LENGTH = 20_00
-
-
-def array_generator():
-  array = []
-
-  for _ in range(LENGTH):
-    array.append(random.randint(MIN, MAX))
-
-  return array
-
+import sys
+from at1 import array_generator
+sys.path.append('../')
 
 def sort(array):
   for number in range(len(array) - 1, 0, -1):
