@@ -1,30 +1,12 @@
-import random
+from at2 import sort, array_generator
 
-MIN = -999_999
-MAX = 999_999
-LENGTH = 20_000
+def test_sort():
+  array = array_generator()
+  
+  result1 = sort(array)                 
+  result2 = sort(array)
+  result3 = sorted(array)
 
-def array_generator():
-  array = []
+  assert result1 == result2
 
-  for _ in range(LENGTH):
-    array.append(random.randint(MIN, MAX))
-
-  return array
-
-def sort(array):
-    for number in range(len(array) - 1, 0, -1):
-        for i in range(number):
-            if array[i] > array[i+1]:
-                temp = array[i]
-                array[i] = array[i+1]
-                array[i+1] = temp
-
-
-def test():
-  t = array_generator()
-
-opa1 = sort(t)
-opa2 = sort(t)
-
-if(opa1 == opa2):
+  assert result1 == result3
